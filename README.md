@@ -156,10 +156,11 @@ XSS-атаки — это атаки, при которых злоумышлен
 Пример уязвимого URL:
 `https://example.com/search?query=USER_INPUT`
 // Предполагаем, что userInput содержит ввод пользователя
-const userInput = "некоторый_пользовательский_ввод";
-const encodedUserInput = encodeURIComponent(userInput); // encodedUserInput будет содержать правильно закодированное значение
+`const userInput = "некоторый_пользовательский_ввод";`
+// encodedUserInput будет содержать правильно закодированное значение
+`const encodedUserInput = encodeURIComponent(userInput);`
 // USER_INPUT, которое можно безопасно добавить к URL.
-const url = `https://example.com/search?query=${encodedUserInput}`;
+`const url = https://example.com/search?query=${encodedUserInput};`
 
 Если значение USER_INPUT не экранируется или фильтруется некорректно, зловредный код может
  быть выполнен в контексте страницы.
