@@ -160,8 +160,7 @@ const userInput = "некоторый_пользовательский_ввод"
 // encodedUserInput будет содержать правильно закодированное значение
 const encodedUserInput = encodeURIComponent(userInput);
 // USER_INPUT, которое можно безопасно добавить к URL.
-const url = https://example.com/search?query=${encodedUserInput};```
-
+const url = https://example.com/search?query=${encodedUserInput};
 
 
 Если значение USER_INPUT не экранируется или фильтруется некорректно, зловредный код может
