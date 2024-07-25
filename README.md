@@ -172,17 +172,19 @@ const url = https://example.com/search?query=${encodedUserInput};
 *`Cross-Site Request Forgery (CSRF)` - Атака, заставляющая веб-браузер жертвы выполнять нежелательные действия на веб-сайте,
  на котором она аутентифицирована.
 Предположим, что на веб-сайте есть следующая форма для изменения email-адреса:
-`<!-- Пример уязвимой формы на веб-сайте -->
+```<!-- Пример уязвимой формы на веб-сайте -->
 <form action="http://example.com/update-email" method="POST">
   <input type="email" name="newEmail" />
   <input type="submit" value="Изменить Email" />
-</form>`
+</form>
+```
 
 Как Происходит CSRF-Атака:
 1)Подготовка Атакующим Запроса:
 Злоумышленник создает вредоносную веб-страницу или email с HTML-кодом, который автоматически
    отправляет POST-запрос на `example.com/update-email`, когда жертва загружает страницу или открывает email.
-`<!-- Вредоносная веб-страница или email -->
+
+```<!-- Вредоносная веб-страница или email -->
 <html>
   <body>
     <form action="http://example.com/update-email" method="POST" id="fakeForm">
@@ -190,7 +192,9 @@ const url = https://example.com/search?query=${encodedUserInput};
     </form>
     <script>document.getElementById("fakeForm").submit();</script>
   </body>
-</html>`
+</html>
+```
+
 2)Выполнение Запроса:
 Когда пользователь, который аутентифицирован на `example.com`, открывает эту вредоносную страницу или email,
 форма автоматически отправляется. Поскольку запрос отправляется с аутентификационными данными пользователя
